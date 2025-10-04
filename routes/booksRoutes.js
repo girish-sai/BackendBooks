@@ -4,15 +4,15 @@ const authUser = require('../middleware/userMiddleware');
 
 const router = express.Router();
 
-router.use(authUser)
+
 router.get('/', getBooks);
 
-router.post('/', createBook);
+router.post('/',authUser, createBook);
 
 router.get('/:id', getBooksById);
 
-router.put('/:id', updateBook);
+router.put('/:id',authUser, updateBook);
 
-router.delete('/:id', deleteBook);
+router.delete('/:id',authUser, deleteBook);
 
 module.exports= router;

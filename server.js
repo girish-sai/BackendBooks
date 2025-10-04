@@ -14,6 +14,10 @@ const userRoutes=require('./routes/userRoutes');
 app.use('/api/books',booksRoutes);
 app.use('/api/users',userRoutes);
 
+app.get('/',(req,res)=>{
+    res.send("Write http://localhost:5000/api/books  to get alll the books")
+})
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
 }); 
